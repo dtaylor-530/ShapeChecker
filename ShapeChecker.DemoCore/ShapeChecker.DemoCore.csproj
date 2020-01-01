@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\coins.jpg" />
+    <None Remove="Images\demo.png" />
+    <None Remove="Images\demo1.png" />
+    <None Remove="Images\demo2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\coins.jpg" />
+    <EmbeddedResource Include="Images\demo.png" />
+    <EmbeddedResource Include="Images\demo1.png" />
+    <EmbeddedResource Include="Images\demo2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Accord.Imaging" Version="3.8.0" />
+    <PackageReference Include="OpenCvSharp4.Windows" Version="4.1.1.20191216" />
+    <PackageReference Include="ReactiveUI.WPF" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CircleDetect.Framework\CircleDetect.Framework.csproj" />
+  </ItemGroup>
+
+</Project>

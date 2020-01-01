@@ -1,0 +1,40 @@
+﻿<Window x:Class="ShapeChecker.DemoCore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShapeChecker.DemoCore"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <ComboBox Width="100" x:Name="ComboBox1" SelectedValuePath="Value"  DisplayMemberPath="Key">
+
+            </ComboBox>
+            <Button Grid.Column="1" Grid.Row="2" x:Name="testButton" Content="Load Image" Click="testButton_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="44" Width="92"/>
+        </ToolBar>
+
+        <Grid Background="Gainsboro">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image x:Name="myImage" Margin="5" />
+            <Image Grid.Row="1" x:Name="detectCircle" Margin="5"/>
+            <Image Grid.Row="2" Grid.Column="0" x:Name="detectRectangle" Margin="5"/>
+            
+            <Canvas x:Name="Canvas2" Grid.Column="1" Margin="5" MouseDown="Canvas_MouseDown" MouseMove="Canvas_MouseMove" MouseUp="Canvas_MouseUp" Background="Transparent" >
+                <Image  x:Name="myGreyImage" />
+            </Canvas>
+
+
+
+        </Grid>
+    </DockPanel>
+</Window>
